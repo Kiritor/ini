@@ -5,7 +5,7 @@
 */
 
 
-package main
+package ini
 
 import (
 	"bufio"
@@ -69,6 +69,12 @@ func NewIni(filePath string) *Ini {
 
 	defer file.Close()
 	return ini
+}
+
+//retrun Dicts map[string]map[string]string list
+
+func (ini *Ini) DictList() []Dict {
+	return ini.dicts
 }
 
 //getValue by section and key
@@ -166,15 +172,6 @@ func (ini *Ini) SetValue(section,key,value string) bool {
 	return false
 }
 
-func main(){
-	ini:=NewIni("config.ini")
-	fmt.Println(ini.GetValue("database","username"))
-	fmt.Println(ini.dicts)
-	ini.DeleteValue("database","username")
-	fmt.Println(ini.dicts)
-	ini.SetValue("databases","passwords","lcoress")
-	fmt.Println(ini.dicts)
-}
 
 
 
