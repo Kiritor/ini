@@ -12,19 +12,19 @@ INI文件格式是某些平台或软件上的配置文件的非正式标准，�
 	password = root
 </code>
 
-# 初始化
+#### 初始化
 <code>
 	iniC:=ini.NewIni("config.ini")
 </code>
 ini.NewIni(filePath),根据文件路径生成ini配置对象.
 
-# 获取所有配置信息
+#### 获取所有配置信息
 <code>
 	iniC.DictList()
 </code>
 DictList()返回的是[]Dict类型,底层是[]map[string]map[string]string数据类型(sections-key-value数组)
 
-# 获取单个配置信息
+#### 获取单个配置信息
 <code>
 	iniC.GetValue("database","username")
 </code>
