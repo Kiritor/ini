@@ -9,6 +9,7 @@ func main(){
 	iniC:=ini.NewIni("config.ini")
 	fmt.Println(iniC)
 	fmt.Println(iniC.GetValue("database","username"))
+	fmt.Println(iniC.DictList())
 /*
 	fmt.Println(iniC.dicts)
 	iniC.DeleteValue("database","username")
